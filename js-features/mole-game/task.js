@@ -1,5 +1,7 @@
-let dead = document.getElementById("dead").textContent;
-let lost = document.getElementById("lost").textContent;
+let elemDead = document.getElementById("dead");
+let dead = elemDead.textContent;
+let elemLost = document.getElementById("lost");
+let lost = elemLost.textContent;
 for (let i = 1; i < 10; i++) {
 	const hole = document.getElementById("hole" + i);
 	const className = hole.className;
@@ -12,16 +14,17 @@ for (let i = 1; i < 10; i++) {
 		}
 
 		if (dead === 10) {
-			dead = 0;
-			lost = 0;
-			alert('Победа');
+			result('Победа');
 		}	
 		else if (lost === 5) {			
-			dead = 0;
-			lost = 0;
-			alert('Проигрыш');
+			result('Проигрыш');
 		}
-		document.getElementById("dead").textContent = dead;
-		document.getElementById("lost").textContent = lost;
+		elemDead.textContent = dead;
+		elemLost.textContent = lost;
 	}
+}
+function result(message) {
+	dead = 0;
+	lost = 0;
+	alert(message);
 }

@@ -1,11 +1,29 @@
-let timer = document.getElementById("timer").innerHTML;
+let a = document.getElementById("timer");
+let timer = a.textContent;
 function time() {
 	timer --;
-	document.getElementById("timer").innerHTML = timer;
+	a.textContent = timer;
 	
 	if (timer === 0) {
 	alert("Вы победили в конкурсе!");
 	clearInterval(interval);
 	}
 }
-let interval = setInterval (time, 1000);
+let interval = setInterval (Time, 1000);
+
+//Повышенный уровень сложности 1
+
+//let newTimer = new Date();
+//newTimer.setHours(0,0,0,0);
+//newTimer.setSeconds(a.textContent);
+
+//function newTime() {
+	//newTimer.setSeconds(newTimer.getSeconds() - 1);
+	//a.textContent = newTimer.toTimeString().substring(0,8);
+	//if (newTimer.getHours() === 0 && newTimer.getMinutes() === 0 && newTimer.getSeconds() === 0) {
+	//alert("Вы победили в конкурсе!");
+	//clearInterval(interval);
+	//}
+
+//}
+//let interval = setInterval (newTime, 1000);
