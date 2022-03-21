@@ -1,5 +1,5 @@
-const Cookie = document.getElementById("cookie");
-let clicker = document.getElementById("clicker__counter")
+const cookie = document.getElementById("cookie");
+const clicker = document.getElementById("clicker__counter")
 let clicker__counter = clicker.textContent;
 let speed = [];
 let prevTime = new Date();
