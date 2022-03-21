@@ -8,7 +8,7 @@ for (let i = 0; i < lengthMenu; i++) {
 		let subMenu = parentLink.querySelector('ul.menu_sub');
 
 		if (subMenu != null) {
-			subMenu.classList.add('menu_active');
+			subMenu.classList.toggle('menu_active');
 			return false;
 	
 		}

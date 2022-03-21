@@ -4,10 +4,11 @@ const elemNext = document.querySelector('div.slider__arrow_next');
 elemPrev.onclick = prev;
 
 elemNext.onclick = next;
-const listElemSlider__item = document.querySelectorAll('div.slider__item');
+const listElemSlider__item = Array.prototype.slice.call(document.querySelectorAll('div.slider__item'));
 const lengthSlider = listElemSlider__item.length;
-let currentSlide = 0;
+
 function prev() {
+	let currentSlide = listElemSlider__item.findIndex(function(elem) {return elem.classList.contains('slider__item_active');});
 	listElemSlider__item[currentSlide].classList.remove('slider__item_active');
 	currentSlide --;
 		
@@ -18,6 +19,7 @@ function prev() {
 	listElemSlider__item[currentSlide].classList.add('slider__item_active');
 }
 function next() {
+	let currentSlide = listElemSlider__item.findIndex(function(elem) {return elem.classList.contains('slider__item_active');});
 	listElemSlider__item[currentSlide].classList.remove('slider__item_active');
 	currentSlide ++;
 
