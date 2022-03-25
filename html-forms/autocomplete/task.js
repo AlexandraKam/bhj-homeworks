@@ -69,7 +69,7 @@ class Autocomplete {
 
   getMatches( text ) {
     let result = [];
-    for (let i = 0; i < this.input.options.length; i++) {
+      for (let i = 0; i < this.input.options.length; i++) {
       if (this.input.options[i].text.includes(text)) {
         result.push({text: this.input.options[i].text, value: this.input.options[i].value});
       }
