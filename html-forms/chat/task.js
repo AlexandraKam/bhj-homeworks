@@ -5,7 +5,8 @@ chat[0].onclick = function() {
 const messages = document.querySelector('.chat-widget__messages');
 const messageEnter = document.getElementById('chat-widget__input');
 messageEnter.onkeyup = function(event) {
-	if (event.code === 'Enter' || event.code === 'NumpadEnter') {		
+	console.log(event.target.value)
+	if ((event.code === 'Enter' || event.code === 'NumpadEnter') && event.target.value != '') {		
 		messages.innerHTML += `
 		<div class="message message_client">
 			<div class="message__time">` + (new Date()).toLocaleTimeString() + `</div>
