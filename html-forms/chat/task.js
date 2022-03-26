@@ -2,10 +2,10 @@ const chat = document.querySelectorAll('.chat-widget');
 chat[0].onclick = function() {
 	chat[0].classList.add('chat-widget_active');
 }
+const messages = document.querySelector('.chat-widget__messages');
 const messageEnter = document.getElementById('chat-widget__input');
 messageEnter.onkeyup = function(event) {
-	if (event.code === 'Enter' || event.code === 'NumpadEnter') {
-		const messages = document.querySelector( '.chat-widget__messages' );
+	if (event.code === 'Enter' || event.code === 'NumpadEnter') {		
 		messages.innerHTML += `
 		<div class="message message_client">
 			<div class="message__time">` + (new Date()).toLocaleTimeString() + `</div>
