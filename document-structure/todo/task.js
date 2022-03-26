@@ -3,7 +3,7 @@ const tasksList = document.getElementById('tasks__list');
 const taskInput = document.getElementById('task__input');
 tasksForm.onsubmit = function(event) {
 	event.preventDefault();	
-	if (taskInput.value != '') {
+	if (taskInput.value.trim() != '') {
 		tasksList.innerHTML += `
 		<div class="task">
   			<div class="task__title">
@@ -12,6 +12,7 @@ tasksForm.onsubmit = function(event) {
 			<a href="#" class="task__remove">&times;</a>
 		</div>`;
 	}
+	taskInput.value = '';
 	let task = document.querySelectorAll('.task');
 	let taskRemove = Array.prototype.slice.call(document.querySelectorAll('.task__remove'));
 	for (let i = 0; i < taskRemove.length; i++) {
