@@ -10,7 +10,7 @@ form.onsubmit = function() {
 	let xhr = new XMLHttpRequest();
     xhr.upload.addEventListener('progress', function(event) {
 		if (event.lengthComputable) {
-            let complete = (event.loaded / event.total | 0);
+            let complete = (event.loaded / event.total || 0);
             progress.value = complete;
         }
 	});
